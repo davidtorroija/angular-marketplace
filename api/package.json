@@ -1,0 +1,21 @@
+{
+  "name": "api-expressjs",
+  "version": "1.0.0",
+  "description": "Express API for Angular Market Place - Altimetrik",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js",
+    "dev-server": "nodemon server.js"
+  },
+  "author": "Diego Herrera",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2"
+  }
+}
