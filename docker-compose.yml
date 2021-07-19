@@ -1,0 +1,16 @@
+version: '3.9' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  api: #name of the express service
+    build: # specify the directory of the Dockerfile
+      context: ./api
+      dockerfile: debug.dockerfile
+    container_name: mean_express
+    volumes:
+      - ./api:/api
+      - /api/node_modules
+    ports:
+      - "3000:3000" #specify ports forewarding
+    environment:
+      - SECRET=Thisismysecret
