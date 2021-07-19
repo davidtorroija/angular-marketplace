@@ -9,6 +9,7 @@ services:
     container_name: mean_express
     volumes:
       - ./api:/api
+      - /api/node_modules
     ports:
       - "3000:3000" #specify ports forewarding
     environment:
