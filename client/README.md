@@ -23,6 +23,34 @@ cd client/angular-marketplace
 npm install
 ```
 
+## Plugins
+We use for this project these plugins in VSCODE to help us with the development:
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template)
+- [Angular Snippets](https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
+
+## Code Linting Rules
+In this project is provided the .prettierrc file which has the basic configuration for Prettier. In the case of not being present, these are the settings:
+
+```JSON
+{
+  "semi": true,
+  "trailingComma": "none",
+  "singleQuote": true,
+  "printWidth": 300,
+  "html.format.wrapLineLength": 300,
+  "html.format.wrapAttributes": "auto"
+}
+```
+
+The file .prettierrc is placed outside the /src folder, we can format all the .ts files by running:
+```BASH
+npm run prettier-format
+```
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

@@ -1,0 +1,8 @@
+{
+  "semi": true,
+  "trailingComma": "none",
+  "singleQuote": true,
+  "printWidth": 300,
+  "html.format.wrapLineLength": 300,
+  "html.format.wrapAttributes": "auto"
+}
