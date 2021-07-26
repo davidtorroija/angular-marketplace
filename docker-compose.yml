@@ -14,3 +14,7 @@ services:
       - "3000:3000" #specify ports forewarding
     environment:
       - SECRET=Thisismysecret
+  database: # name of the mongo service
+    image: mongo # specify image to build container from
+    ports:
+      - "27017:27017" # specify port forewarding
