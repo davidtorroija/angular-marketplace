@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser'
 import { CommonModule } from '@angular/common';
-
-
+import { AllProductsComponent } from './pages/allProducts/allProducts.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AllProductsComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule,
+    MatIconModule
   ]
 })
 export class ProductsModule { }

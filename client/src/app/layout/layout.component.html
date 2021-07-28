@@ -1,2 +1,19 @@
-<p>layout works!</p>
-<!-- we can use mat-nav to implement-->
+<mat-drawer-container fullscreen>
+  <mat-drawer [opened]="start" mode="side" position="end" opened>Drawer content</mat-drawer>
+  <mat-drawer-content>
+
+      <mat-toolbar color="primary" class="main-topbar">
+        <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center" class="top-bar container">
+          <span fxHide="false" fxHide.gt-sm>
+            <button
+              mat-icon-button
+              (click)="toggle()"
+            >
+              <mat-icon class="mat-18">menu</mat-icon>
+            </button>
+          </span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

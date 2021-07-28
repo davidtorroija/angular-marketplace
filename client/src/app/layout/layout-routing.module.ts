@@ -2,13 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 
-const children = [
-    // DHS- here declare all the routes 
-  /* {
-    path: 'home',
-    component: HomeComponent
-  } */
-];
+import { AllProductsComponent } from '../products/pages/allProducts/allProducts.component';
 
 const routes: Routes = [
   {
@@ -16,6 +10,16 @@ const routes: Routes = [
     component: LayoutComponent,
     // canActivate: [AuthGuard],
     // children
+    children: [
+      {
+        path: 'products',
+        component: AllProductsComponent
+      }
+    ]
+  },
+  {
+    path: '',
+    redirectTo: '/products',
   }
 ];
 
