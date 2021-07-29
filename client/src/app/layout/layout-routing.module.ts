@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout.component';
-
-import { AllProductsComponent } from '../products/pages/allProducts/allProducts.component';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   {
@@ -12,19 +11,23 @@ const routes: Routes = [
     // children
     children: [
       {
+        path: '',
+        redirectTo: 'products'
+      },
+      {
         path: 'products',
-        component: AllProductsComponent
+        loadChildren: () => import('../products/products.module').then((m) => m.ProductsModule)
       }
     ]
   },
   {
-    path: '',
-    redirectTo: '/products',
+    path: '**',
+    redirectTo: 'products'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes), SharedModule],
   exports: [RouterModule]
 })
 export class LayoutRoutingModule {}

@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser'
 import { CommonModule } from '@angular/common';
-import { AllProductsComponent } from './pages/allProducts/allProducts.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
+import { ProductsRoutingModule } from './products-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
+//custom components
+import { AllProductsComponent } from './pages/allProducts/allProducts.component';
+import { ItemCardComponent } from './components/item-card/item-card.component';
 @NgModule({
   declarations: [
-    AllProductsComponent
+    AllProductsComponent,
+    ItemCardComponent
   ],
   imports: [
     CommonModule,
-    MatCardModule,
-    MatIconModule
+    ProductsRoutingModule,
+    SharedModule
   ]
 })
 export class ProductsModule { }
