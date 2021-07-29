@@ -1,1 +1,44 @@
-<p>login works!</p>
+<!-- // NAVBAR? -->
+<section class="form__bg h-100">
+  <div class="form-column d-flex justify-content-center align-items-center mx-auto h-100">
+    <form class="form-column__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-card class="mx-1 mb-2">
+        <div class="form-column__wrapper">
+          <img class="form-colum__logo-img" src="https://avatars.githubusercontent.com/u/139426?s=200&v=4"
+            alt="App Logo">
+          <h3 class="ml-1 mb-0">Log-in to your account</h3>
+        </div>
+      </mat-card>
+      <mat-card class="form-column__inputs mx-1">
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" [errorStateMatcher]="matcher"
+            placeholder="Ex. pat@example.com">
+          <mat-error *ngIf="f.email.hasError('email') && !f.email.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="f.email.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" [errorStateMatcher]="matcher"
+            placeholder="Password">
+          <mat-error *ngIf="f.password.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+          <mat-error *ngIf="f.password.hasError('minlength')">
+            Password has to be greater than <strong>8 characters</strong>
+          </mat-error>
+        </mat-form-field>
+
+
+        <div class="d-flex justify-content-center">
+          <button mat-raised-button color="accent" type="submit">Sign in</button>
+        </div>
+      </mat-card>
+    </form>
+  </div>
+</section>

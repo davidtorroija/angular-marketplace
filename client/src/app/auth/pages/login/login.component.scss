@@ -1,0 +1,24 @@
+@import '_variables';
+
+.form__bg {
+  background-color: #e3e3e3;
+}
+
+.form-column__form {
+  width: 100%;
+}
+.form-column__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-colum__logo-img {
+  max-width: 3rem;
+}
+
+@media (min-width: $md) {
+  .form-column {
+    max-width: 35rem;
+  }
+}
