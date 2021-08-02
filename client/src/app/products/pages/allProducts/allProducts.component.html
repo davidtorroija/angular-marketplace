@@ -1,0 +1,12 @@
+
+<main>
+	<div class="responsive-container">
+		<div class="grid">
+      <app-item-card
+        *ngFor="let productEl of products"
+        [product]="productEl"
+      >
+      </app-item-card>
+		</div>
+	</div>
+</main>
