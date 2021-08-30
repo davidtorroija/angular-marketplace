@@ -1,0 +1,35 @@
+.mainNavbar{
+  &__upperRow{
+    align-items: center;
+    background-color: var(--primaryDark);
+    display: flex;
+    height: 64px;
+    &--widgetsLeft{
+      display: flex;
+      justify-content: space-around;
+      margin-left: auto;
+      width: 30%;
+    }
+  }
+
+  &__widgetButton a{
+    align-items: center;
+    display: flex;
+    color: var(--textColor);
+    cursor: pointer;
+    font-size: 13px;
+    transition: all .4s ease-in-out;
+    & .mat-icon{
+      margin-right: 10px;
+    }
+
+    &:hover{
+      color: var(--textColor-alt);
+    }
+  }
+
+  &__hamburguerButton{
+    margin-left: auto;
+  }
+}
+

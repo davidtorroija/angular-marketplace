@@ -1,20 +1,75 @@
 <mat-drawer-container fullscreen>
   <mat-drawer [opened]="start" mode="side" position="end" opened>Drawer content</mat-drawer>
   <mat-drawer-content>
+      <mat-toolbar color="primary" class="mainNavbar">
+        <div class="mainNavbar__upperRow">
+          <div class="mainNavbar__upperRow--widgetsRight">
+            <button
+              mat-button
+              [matMenuTriggerFor]="languageMenu"
+            >
+              <img width="18" [src]="flag.image" [alt]="flag.name">
+              {{ flag.name }}
+            </button>
+            <mat-menu #languageMenu="matMenu">
+              <button
+                mat-menu-item
+                *ngFor="let flag of flags"
+                (click)="changeLang(flag)"
+                class=""
+              >
+                <img width="18" [src]="flag.image" [alt]="flag.name">
+                {{ flag.name }}
+              </button>
+            </mat-menu>
 
-      <mat-toolbar color="primary" class="main-topbar">
+             <button
+              mat-button
+              [matMenuTriggerFor]="currencyMenu"
+            >
+              {{ currency }}
+            </button>
+            <mat-menu #currencyMenu="matMenu">
+              <button
+                mat-menu-item
+                *ngFor="let currency of currencies"
+                (click)="changeCurrency(currency)"
+                class=""
+              >
+                {{ currency }}
+              </button>
+            </mat-menu>
+          </div>
+
+          <div class="mainNavbar__upperRow--widgetsLeft">
+            <div class="mainNavbar__widgetButton">
+              <a fxShow="false" fxShow.gt-xs routerLinkActive="router-link-active" ><mat-icon class="mat-icon-lg mat-icon material-icons mr-10">favorite_border</mat-icon> WISHLIST</a>
+            </div>
+            <div class="mainNavbar__widgetButton">
+              <a fxShow="false" fxShow.gt-xsrouterLinkActive="router-link-active" ><mat-icon>cached</mat-icon>COMPARE</a>
+            </div>
+            <div class="mainNavbar__widgetButton">
+                <a fxShow="false" fxShow.gt-xs routerLinkActive="router-link-active" ><mat-icon>person</mat-icon>My Account</a>
+              </div>
+          </div>
+        </div>
+
+
         <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center" class="top-bar container">
-          <span fxHide="false" fxHide.gt-sm>
+          <span class="mainNavbar__hamburguerButton" fxHide="false" fxHide.gt-sm>
             <button
               mat-icon-button
               (click)="toggle()"
             >
-              <mat-icon class="mat-18">menu</mat-icon>
+              <mat-icon class="mat-18">add_shopping_cart</mat-icon>
             </button>
           </span>
         </mat-toolbar-row>
       </mat-toolbar>
 
+
       <router-outlet></router-outlet>
+
+
   </mat-drawer-content>
 </mat-drawer-container>

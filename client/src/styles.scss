@@ -35,6 +35,12 @@ $angular-marketplace-theme: mat.define-light-theme(
 @include mat.all-component-themes($angular-marketplace-theme);
 
 /* You can add global styles to this file, and also import other style files */
+:root{
+  --primaryDark: #222;
+  --textColor: #c3c3c3;
+  --textColor-alt: #9c9c9c;
+}
+
 html,
 body {
   height: 100%;

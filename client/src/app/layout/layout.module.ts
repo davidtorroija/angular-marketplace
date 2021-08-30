@@ -8,6 +8,7 @@ import { LayoutComponent } from './layout.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button'
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { MatButtonModule } from '@angular/material/button'
     MatSidenavModule,
     MatToolbarModule,
     MatButtonModule,
+    MatMenuModule
   ],
   entryComponents: [],
   bootstrap: [LayoutComponent]
