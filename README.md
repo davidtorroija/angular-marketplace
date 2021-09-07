@@ -1,5 +1,4 @@
-# angular-marketplace
-angular-marketplace
+# Angular Marketplace
 
 To run the app:
 
