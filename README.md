@@ -8,7 +8,8 @@ To run the app:
 ```ng serve```
 
 The following image shows the project architecture and the dependencies between modules
-![image](https://user-images.githubusercontent.com/84856587/132365586-5388a794-c8e0-4349-a2bb-077fc086a26d.png)
+![Angular Marketplace](https://user-images.githubusercontent.com/84856587/132372503-15a0e2a0-05e2-4781-8ae8-481b2be031e2.png)
+
 
 # app.module
 - Eager load before app starts.
