@@ -3,8 +3,8 @@ angular-marketplace
 
 To run the app:
 
-```yarn```
-
+- Make sure you have Angular 12
+- Move to the client folder and run:
 ```ng serve```
 
 The following image shows the project architecture and the dependencies between modules
