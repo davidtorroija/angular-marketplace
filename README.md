@@ -6,7 +6,7 @@ To run the app:
 - Move to the client folder and run:
 ```ng serve```
 
-The following image shows the project architecture and the dependencies between modules
+The following image shows the frontend architecture of the project and the dependencies between modules
 ![Angular Marketplace](https://user-images.githubusercontent.com/84856587/132372503-15a0e2a0-05e2-4781-8ae8-481b2be031e2.png)
 
 
