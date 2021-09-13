@@ -3,73 +3,109 @@
   <mat-drawer-content>
       <mat-toolbar color="primary" class="mainNavbar">
         <div class="mainNavbar__upperRow">
-          <div class="mainNavbar__upperRow--widgetsRight">
-            <button
-              mat-button
-              [matMenuTriggerFor]="languageMenu"
-            >
-              <img width="18" [src]="flag.image" [alt]="flag.name">
-              {{ flag.name }}
-            </button>
-            <mat-menu #languageMenu="matMenu">
+          <div class="maxContainer">
+            <div class="mainNavbar__upperRow--widgetsRight">
               <button
-                mat-menu-item
-                *ngFor="let flag of flags"
-                (click)="changeLang(flag)"
-                class=""
+                mat-button
+                [matMenuTriggerFor]="languageMenu"
               >
                 <img width="18" [src]="flag.image" [alt]="flag.name">
                 {{ flag.name }}
               </button>
-            </mat-menu>
-
-             <button
-              mat-button
-              [matMenuTriggerFor]="currencyMenu"
-            >
-              {{ currency }}
-            </button>
-            <mat-menu #currencyMenu="matMenu">
-              <button
-                mat-menu-item
-                *ngFor="let currency of currencies"
-                (click)="changeCurrency(currency)"
-                class=""
+              <mat-menu #languageMenu="matMenu">
+                <button
+                  mat-menu-item
+                  *ngFor="let flag of flags"
+                  (click)="changeLang(flag)"
+                  class=""
+                >
+                  <img width="18" [src]="flag.image" [alt]="flag.name">
+                  {{ flag.name }}
+                </button>
+              </mat-menu>
+               <button
+                mat-button
+                [matMenuTriggerFor]="currencyMenu"
               >
                 {{ currency }}
               </button>
-            </mat-menu>
-          </div>
-
-          <div class="mainNavbar__upperRow--widgetsLeft">
-            <div class="mainNavbar__widgetButton">
-              <a fxShow="false" fxShow.gt-xs routerLinkActive="router-link-active" ><mat-icon class="mat-icon-lg mat-icon material-icons mr-10">favorite_border</mat-icon> WISHLIST</a>
+              <mat-menu #currencyMenu="matMenu">
+                <button
+                  mat-menu-item
+                  *ngFor="let currency of currencies"
+                  (click)="changeCurrency(currency)"
+                  class=""
+                >
+                  {{ currency }}
+                </button>
+              </mat-menu>
             </div>
-            <div class="mainNavbar__widgetButton">
-              <a fxShow="false" fxShow.gt-xsrouterLinkActive="router-link-active" ><mat-icon>cached</mat-icon>COMPARE</a>
-            </div>
-            <div class="mainNavbar__widgetButton">
-                <a fxShow="false" fxShow.gt-xs routerLinkActive="router-link-active" ><mat-icon>person</mat-icon>My Account</a>
+            <div class="mainNavbar__upperRow--widgetsLeft">
+              <div class="mainNavbar__widgetButton">
+                <a fxShow="false" fxShow.gt-xs routerLinkActive="router-link-active" ><mat-icon class="mat-icon-lg mat-icon material-icons mr-10">favorite_border</mat-icon> WISHLIST</a>
               </div>
+              <div class="mainNavbar__widgetButton">
+                <a fxShow="false" fxShow.gt-xsrouterLinkActive="router-link-active" ><mat-icon>cached</mat-icon>COMPARE</a>
+              </div>
+              <div class="mainNavbar__widgetButton">
+                  <a fxShow="false" fxShow.gt-xs routerLinkActive="router-link-active" ><mat-icon>person</mat-icon>My Account</a>
+                </div>
+            </div>
           </div>
         </div>
-
-
-        <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-between center" class="top-bar container">
-          <span class="mainNavbar__hamburguerButton" fxHide="false" fxHide.gt-sm>
-            <button
-              mat-icon-button
-              (click)="toggle()"
-            >
-              <mat-icon class="mat-18">add_shopping_cart</mat-icon>
-            </button>
-          </span>
+        <mat-toolbar-row class="middleNavbar">
+          <div class="maxContainer">
+            <div class="middleNavbar__logoContainer">
+              <a [routerLink]="['/']">
+                <img src="assets/images/logo/logo.png" alt="logo">
+              </a>
+            </div>
+            <form class="middleNavbar__form">
+              <div class="middleNavbar__form--Wrapper">
+                  <input type="text" placeholder="Type to search...">
+                  <button class="btn-search" type="submit">Search</button>
+              </div>
+            </form>
+            <div class="middleNavbar__info">
+              <div class="middleNavbar__info--icon">
+                <button
+                  mat-icon-button
+                >
+                  <mat-icon class="mat-icon-lg mat-icon material-icons">call</mat-icon>
+                </button>
+              </div>
+              <div class="middleNavbar__info--text">
+                <span>Helpline:</span>
+                <span>02(981)336 111</span>
+              </div>
+            </div>
+            <span class="middleNavbar__cartButton" fxHide="false" fxHide.gt-sm>
+              <button
+                mat-icon-button
+                (click)="toggle()"
+              >
+                <mat-icon class="mat-18">add_shopping_cart</mat-icon>
+                <div class="middleNavbar__cartButton--total">
+                  0
+                </div>
+                <span class="middleNavbar__cartButton--totalAmount">$0.00</span>
+              </button>
+            </span>
+          </div>
         </mat-toolbar-row>
       </mat-toolbar>
-
-
+      <mat-toolbar-row class="lowerNavbar">
+        <div class="maxContainer">
+          <div class="main-menu" fxLayout="row" fxHide fxShow.gt-sm>
+            <a mat-button class="mat-button">Home</a>
+            <a [routerLink]="['/home/products/all']" routerLinkActive="router-link-active"  mat-button class="mat-button">Games</a>
+            <a mat-button class="mat-button">Shop</a>
+            <a mat-button class="mat-button">Blog</a>
+            <a mat-button class="mat-button">About us</a>
+            <a [routerLink]="['/pages/contact']" routerLinkActive="router-link-active"   mat-button class="mat-button">Contact</a>
+          </div>
+        </div>
+      </mat-toolbar-row>
       <router-outlet></router-outlet>
-
-
   </mat-drawer-content>
 </mat-drawer-container>

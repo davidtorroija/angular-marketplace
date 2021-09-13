@@ -37,8 +37,14 @@ $angular-marketplace-theme: mat.define-light-theme(
 /* You can add global styles to this file, and also import other style files */
 :root{
   --primaryDark: #222;
+  --themeDefault: #ef6c00;
+  --altDark: #333;
   --textColor: #c3c3c3;
   --textColor-alt: #9c9c9c;
+  --white: #fff;
+  --lightBackground: #f3f3f3;
+  --xlg: 1440px;
+
 }
 
 html,
@@ -121,4 +127,16 @@ $rem-sizes: 0 1 2 3 4 5 6 7 8;
     padding-top: #{$size}rem !important;
     padding-bottom: #{$size}rem !important;
   }
+}
+
+
+.maxContainer{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--xlg);
+  width: var(--xlg);
 }
